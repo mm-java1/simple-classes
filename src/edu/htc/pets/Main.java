@@ -11,13 +11,13 @@ public class Main {
         catArray[0] = catOne;
 
         Cat catTwo = new Cat();
-        catTwo.age = 2;
-        catTwo.name = "Carolyn";
+        catTwo.setAge(2);
+        catTwo.setName("Carolyn");
         catArray[1] = catTwo;
 
         Cat catThree = new Cat();
-        catThree.age = 8;
-        catThree.name = "Tres";
+        catThree.setAge(8);
+        catThree.setName("Tres");
         catArray[2] = catThree;
 
         System.out.println("Displaying Cat Information");
@@ -26,8 +26,8 @@ public class Main {
         for (i = 0; i > 3; i = i + 1)
         {
             i1 = i + 1;
-            System.out.println("Cat " + i1 + "'s name is " + catArray[i].name);
-            System.out.println("Their age is " + catArray[i].age);
+            System.out.println("Cat " + i1 + "'s name is " + catArray[i].getName);
+            System.out.println("Their age is " + catArray[i].getAge);
             System.out.println("And their age in cat years is " + catArray[i].age.getHumanAge())
         }
     }
