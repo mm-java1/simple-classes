@@ -27,6 +27,11 @@ public class Dog {
     {
         return name;
     }
+    Dog(String defName)
+    {
+        setName(defName);
+    }
+
     public double getHumanAge()
     {
         double humanAge = 0;
@@ -39,5 +44,11 @@ public class Dog {
             humanAge = 21 + (getAge() * 4);
         }
         return humanAge;
+    }
+
+    @Override
+    public String toString()
+    {
+        return getName();
     }
 }
