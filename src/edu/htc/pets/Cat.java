@@ -27,20 +27,20 @@ public class Cat {
     {
         return name;
     }
-    public static double getHumanAge()
+    public double getHumanAge()
     {
         double humanAge = 0;
-        if (age <= 1)
+        if (getAge() <= 1)
         {
-            humanAge = age * 15;
+            humanAge = getAge() * 15;
         }
-        else if (age <= 2)
+        else if (getAge() <= 2)
         {
-            humanAge = age * 12.5;
+            humanAge = getAge() * 12.5;
         }
         else
         {
-            humanAge = 25 + (age * 4);
+            humanAge = 25 + (getAge() * 4);
         }
         return humanAge;
     }

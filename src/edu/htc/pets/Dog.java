@@ -27,16 +27,16 @@ public class Dog {
     {
         return name;
     }
-    public static double getHumanAge()
+    public double getHumanAge()
     {
         double humanAge = 0;
-        if (age <= 2)
+        if (getAge() <= 2)
         {
-            humanAge = age * 10.5;
+            humanAge = getAge() * 10.5;
         }
         else
         {
-            humanAge = 21 + (age * 4);
+            humanAge = 21 + (getAge() * 4);
         }
         return humanAge;
     }
