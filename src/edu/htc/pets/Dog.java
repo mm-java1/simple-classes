@@ -9,5 +9,41 @@ package edu.htc.pets;
  */
 public class Dog {
 
+    private String dogName;
+    private int dogAge;
 
+    public Dog(String dogName){
+        this.dogName=dogName;
+    }
+
+    public String getDogName() {
+        return dogName;
+    }
+
+    public void setDogName(String S){
+        dogName = S;
+    }
+
+    public int getDogAge() {
+        return dogAge;
+    }
+
+    public void setDogAge(int x) {
+        dogAge = x;
+    }
+
+
+    public double calculateDogHumanAge() {
+        double humanAge = 0;
+
+        if (dogAge <= 2) {
+            humanAge = dogAge * 10.5;
+        } else {
+            humanAge = 21;
+
+            humanAge += 4 * dogAge;
+        }
+
+        return humanAge;
+    }
 }
