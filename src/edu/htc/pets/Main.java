@@ -1,4 +1,6 @@
 package edu.htc.pets;
+import java.util.ArrayList;
+
 
 public class Main {
 
@@ -9,31 +11,31 @@ public class Main {
          *  Note that I want you to use a different loop for the cats and the dogs
          */
 
-     /**   Cat code
-        Let’s start with the cats.
-            1. Create an empty array to hold the Cat objects you will create.
-            2. Create a cat, setting it’s name and age, then add it to the array.
-            3. Create two more cats, also setting their names and ages, then add each of them to the array.
-            4. Print a message to say you are displaying the cat information.
-        Set up a regular for loop with a counter to go through the cat array and
-        print the cat’s name, age, and then human age.
-        Use nice messages so we can tell what you are printing.**/
+        /**   Cat code
+         Let’s start with the cats.
+         1. Create an empty array to hold the Cat objects you will create.
+         2. Create a cat, setting it’s name and age, then add it to the array.
+         3. Create two more cats, also setting their names and ages, then add each of them to the array.
+         4. Print a message to say you are displaying the cat information.
+         Set up a regular for loop with a counter to go through the cat array and
+         print the cat’s name, age, and then human age.
+         Use nice messages so we can tell what you are printing.**/
 
-        Cat[] cat = new Cat[3];
+        Cat[] myCats = new Cat[3];
 
         //Create a cat, setting it's name and age, then adding it to the cat array
-        cat[0] = new Cat();
-        cat[0].setName("Spooky");
-        cat[0].setAge(1);
+        Cat cat = new Cat("Spooky");
+        cat.setAge(1);
+        myCats[0] = cat;
 
         //Create two more cats, also setting their names and ages, then add each of them to the array.
-        cat[1] = new Cat();
-        cat[1].setName("Jake");
-        cat[1].setAge(1.5);
+        cat = new Cat("Jake");
+        cat.setAge(1.5);
+        myCats[1] = cat;
 
-        cat[2] = new Cat();
-        cat[2].setName("Bean");
-        cat[2].setAge(12);
+        cat = new Cat("Bean");
+        cat.setAge(12);
+        myCats[2] = cat;
 
         //Print a message to say you are displaying
         System.out.println("Cat Information:");
@@ -41,39 +43,41 @@ public class Main {
         // Set up a regular for loop with a counter to go through the cat array
         // and print the cat's name, age, and then human age.
         for (int i = 0; i < 3; i++) {
-            if ( cat[i].getAge() == 1) {
-                System.out.println(cat[i].getName() + " is " + cat[i].getAge() + " year old in real years.");
-             }
-            else {
-                System.out.println(cat[i].getName() + " is " + cat[i].getAge() + " years old in real years.");
-           }
-            System.out.println(cat[i].getName() + " is " + cat[i].getHumanAge() + " years old in cat years.");
+            if (myCats[i].getAge() == 1) {
+                System.out.println(myCats[i].getName() + " is " + myCats[i].getAge() + " year old in real years.");
+            } else {
+                System.out.println(myCats[i].getName() + " is " + myCats[i].getAge() + " years old in real years.");
+            }
+            System.out.println(myCats[i].getName() + " is " + myCats[i].getHumanAge() + " years old in cat years.");
             System.out.println("***");
         }
 
         /**Dog code
-            Now it’s time for the dogs.
-            1. Create an empty array to hold the Dog objects you will create.
-            2. Create a dog, setting it’s name and age, then add it to the array.
-            3. Create two more dogs, also setting their names and ages, then add each of them to the array.
-            4. Print a message to say you are displaying the dog information.
-        Set up a for-each or an enhanced for loop to go through the dog array
+         Now it’s time for the dogs.
+         1. Create an empty array to hold the Dog objects you will create.
+         2. Create a dog, setting it’s name and age, then add it to the array.
+         3. Create two more dogs, also setting their names and ages, then add each of them to the array.
+         4. Print a message to say you are displaying the dog information.
+         Set up a for-each or an enhanced for loop to go through the dog array
          and print the dog’s name, age, and then human age.
          Use nice messages so we can tell what you are printing.**/
 
-        Dog[] dog = new Dog[3];
+        Dog[] myDogs = new Dog[3];
 
         //Create a dog, setting it's name and age, then adding it to the dog array
-        dog[0] = new Dog("Sadie");
-        dog[0].setAge(1);
+        Dog dog = new Dog("Sadie");
+        dog.setAge(12);
+        myDogs[0] = dog;
 
         // Create two more dogs, also setting their names and ages, then add each of them to the array.
         // Take note here, the dog name is set by supplying the parameter.
-        dog[1] = new Dog("Roscoe");
-        dog[1].setAge(1.5);
+        dog = new Dog("Roscoe");
+        dog.setAge(14);
+        myDogs[1] = dog;
 
-        dog[2] = new Dog("Daisy");
-        dog[2].setAge(12);
+        dog = new Dog("Daisy");
+        dog.setAge(3);
+        myDogs[2] = dog;
 
         System.out.println("------------------------------------------------");
         System.out.println("------------------------------------------------");
@@ -85,23 +89,22 @@ public class Main {
 
         // Set up a for-each or an enhanced for loop to go through the dog array
         // and print the dog’s name, age, and then human age.
-        for (Dog x : dog) {
-            if (x.getAge() <= 2){
+        for (Dog x : myDogs) {
+            if (x.getAge() <= 2) {
                 System.out.println(x.getName() + " is " + x.getAge() + " year old in real years.");
-            }
-            else{
+            } else {
                 System.out.println(x.getName() + " is " + x.getAge() + " years old in real years.");
             }
             System.out.println(x.getName() + " is " + x.getHumanAge() + " years old in dog years.");
             System.out.println("***");
         }
         /**CODE QUESTIONS
-        Answer the following questions using comments in your code.
+         Answer the following questions using comments in your code.
          Write code to show that you tried to do these things (comment it out if it doesn’t compile).
          Use comments to explain what you found.
 
          --------- Question 1
-                Can you create a Cat without a name?
+         Can you create a Cat without a name?
          --------- Answer 1 -- yes
          cat[0] = new Cat();
          ---------------------------------------------------------
@@ -117,7 +120,7 @@ public class Main {
          ---------------------------------------------------------
 
          --------- Question 3
-                What happens if you try to put a dog in the cat array? Does it compile? Does the code run?
+         What happens if you try to put a dog in the cat array? Does it compile? Does the code run?
          --------- Answer 3 -- Program will not compile.
          cat[0] = new Dog();
          Error:(25, 18) java: incompatible types: edu.htc.pets.Dog cannot be converted to edu.htc.pets.Cat
@@ -136,15 +139,67 @@ public class Main {
 
         /**(Extra: Can you figure out how to make it print pretty?)**/
         System.out.println("Adding a custom toString method give this result.");
-        System.out.println("Printing the Dog object..");
+        System.out.println("Printing the Dogs..");
         System.out.println("-----------------------------------");
 
-        System.out.print(dog[0]);
+        System.out.print(myDogs[0]);
         System.out.println();
         System.out.println();
-        System.out.println("Printing the Cat object..");
+        System.out.println("Printing the Cats..");
         System.out.println("-----------------------------------");
-        System.out.print(cat[0]);
+        System.out.print(myCats[0]);
+
+        //New  stuff
+        Pet[] myPets = new Pet[6];
+        myPets[0] = myCats[0];
+        myPets[1] = myCats[1];
+        myPets[2] = myCats[2];
+        myPets[3] = myDogs[0];
+        myPets[4] = myDogs[1];
+        myPets[5] = myDogs[2];
+
+        for (Pet current : myPets) {
+            System.out.println("\n\nPet " + current.getName() + " is " + current.getAge()
+                    + " which is " + current.getHumanAge() + " human years.");
+            //If I'm a dog, print my trick
+            if (current instanceof Dog) {
+                Dog curDog = (Dog) current;
+                curDog.getTrickName();
+            }
+
+            //This causes an error when we hit our first Dog object - always check using instanceof before casting
+            //Cat curCat = (Cat)current;
+        }
+
+        Pet somePet = myPets[3];
+        // Can't do this.  Only Dog objects have getTrickName method
+        //somePet.getTrickName();
+
+        //Make a generic Pet
+        System.out.println();
+        // Can't do this now that the Pet class is abstract
+        //System.out.println("Printing the generic Pet: ");
+        //Pet something = new Pet("Mystery Pet");
+        //System.out.println(something);
+        System.out.println();
+
+        //Put the Pets into an ArrayList of Pets
+        ArrayList<Pet> petList = new ArrayList<Pet>();
+
+        for (Pet myPet : myPets) {
+            petList.add(myPet);
+        }
+
+        //Now what happens when we take things out?
+        Pet anotherPet = petList.get(0);
+
+        // Java wont let me do this, the object might not be a pet
+        //Pet yetAnotherPet = petList.get(0);
+
+        //But if I am sure that it is really a Pet I can cast it to a Pet object
+        Pet yetAnotherPet = (Pet) petList.get(0);
+
 
     }
 }
+
