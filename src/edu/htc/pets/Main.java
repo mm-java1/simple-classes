@@ -98,6 +98,29 @@ public class Main {
             System.out.println(x.getName() + " is " + x.getHumanAge() + " years old in dog years.");
             System.out.println("***");
         }
+
+        /** Turtle Code
+         *         Now it’s time for the dogs.
+         */
+
+        Turtle[] myTurtles = new Turtle[3];
+
+        //Create a dog, setting it's name and age, then adding it to the dog array
+        Turtle turtle = new Turtle("BoxCar");
+        turtle.setAge(15);
+        myTurtles[0] = turtle;
+
+        // Create two more dogs, also setting their names and ages, then add each of them to the array.
+        // Take note here, the dog name is set by supplying the parameter.
+        turtle = new Turtle("Shelly");
+        turtle.setAge(1);
+        myTurtles[1] = turtle;
+
+        turtle = new Turtle("GreenOne");
+        turtle.setAge(3);
+        myTurtles[2] = turtle;
+
+
         /**CODE QUESTIONS
          Answer the following questions using comments in your code.
          Write code to show that you tried to do these things (comment it out if it doesn’t compile).
@@ -150,56 +173,84 @@ public class Main {
         System.out.print(myCats[0]);
 
         //New  stuff
-        Pet[] myPets = new Pet[6];
+        Pet[] myPets = new Pet[9];
         myPets[0] = myCats[0];
         myPets[1] = myCats[1];
         myPets[2] = myCats[2];
         myPets[3] = myDogs[0];
         myPets[4] = myDogs[1];
         myPets[5] = myDogs[2];
+        myPets[6] = myTurtles[0];
+        myPets[7] = myTurtles[1];
+        myPets[8] = myTurtles[2];
 
         for (Pet current : myPets) {
             System.out.println("\n\nPet " + current.getName() + " is " + current.getAge()
                     + " which is " + current.getHumanAge() + " human years.");
-            //If I'm a dog, print my trick
+            //If I'm a cat, print my noise
+            if (current instanceof Cat) {
+                Cat curCat = (Cat) current;
+                if (curCat instanceof Audible) {
+                    curCat.makeSound();
+                }
+            }
+            //If I'm a dog, print my noise
             if (current instanceof Dog) {
                 Dog curDog = (Dog) current;
-                curDog.getTrickName();
+                if (curDog instanceof Audible) {
+                    curDog.makeSound();
+                }
             }
-
-            //This causes an error when we hit our first Dog object - always check using instanceof before casting
-            //Cat curCat = (Cat)current;
+            //If I'm a turtle, print my noise
+            if (current instanceof Turtle) {
+                Turtle curTurtle = (Turtle) current;
+                if (curTurtle instanceof Audible) {
+                    curTurtle.makeSound();
+                }
+            }
         }
 
-        Pet somePet = myPets[3];
+        //for (Pet current : myPets) {
+        //    System.out.println("\n\nPet " + current.getName() + " is " + current.getAge()
+        //            + " which is " + current.getHumanAge() + " human years.");
+        //If I'm a dog, print my trick
+        //if (current instanceof Dog) {
+        //    Dog curDog = (Dog) current;
+        //    curDog.getTrickName();
+        //}
+
+        //This causes an error when we hit our first Dog object - always check using instanceof before casting
+        //Cat curCat = (Cat)current;
+        //}
+
+        //Pet somePet = myPets[3];
         // Can't do this.  Only Dog objects have getTrickName method
         //somePet.getTrickName();
 
         //Make a generic Pet
-        System.out.println();
+        //System.out.println();
         // Can't do this now that the Pet class is abstract
         //System.out.println("Printing the generic Pet: ");
         //Pet something = new Pet("Mystery Pet");
         //System.out.println(something);
-        System.out.println();
+        //System.out.println();
 
         //Put the Pets into an ArrayList of Pets
-        ArrayList<Pet> petList = new ArrayList<Pet>();
+        //ArrayList<Pet> petList = new ArrayList<Pet>();
 
-        for (Pet myPet : myPets) {
-            petList.add(myPet);
-        }
+        // for (Pet myPet : myPets) {
+        //    petList.add(myPet);
+        //}
 
         //Now what happens when we take things out?
-        Pet anotherPet = petList.get(0);
+        //Pet anotherPet = petList.get(0);
 
         // Java wont let me do this, the object might not be a pet
         //Pet yetAnotherPet = petList.get(0);
 
         //But if I am sure that it is really a Pet I can cast it to a Pet object
-        Pet yetAnotherPet = (Pet) petList.get(0);
+        //Pet yetAnotherPet = (Pet) petList.get(0);
 
+    }}
 
-    }
-}
 

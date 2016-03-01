@@ -38,4 +38,9 @@ public abstract class Pet {
     }
 
     public abstract double getHumanAge();
+
+    public void makeSound(){
+        System.out.println( getName() + " is silent.  He cannot hear or speak.");
+    }
+
 }
